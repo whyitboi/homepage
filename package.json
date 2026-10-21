@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "hompage",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,16 +12,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/whyitboi/template.git"
+    "url": "git+https://github.com/whyitboi/hompage.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/whyitboi/template/issues"
+    "url": "https://github.com/whyitboi/hompage/issues"
   },
-  "homepage": "https://github.com/whyitboi/template#readme",
+  "homepage": "https://github.com/whyitboi/hompage#readme",
   "devDependencies": {
     "@babel/core": "^8.0.6",
     "@babel/preset-env": "^8.0.6",
