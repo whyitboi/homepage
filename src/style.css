@@ -87,7 +87,7 @@ h3 {
   --fontSize: 25px;
   font-size: var(--_fontSize);
 }
-header {
+.page-header {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 1em;
@@ -130,8 +130,27 @@ nav {
   width: var(--_iconSize);
   height: var(--_iconSize);
 }
+main section > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1100px;
+  margin-inline: auto;
+}
 article header {
-  background: none;
+  --gap: 0.5rem;
+  gap: var(--_gap);
+  display: flex;
+  align-items: center;
+}
+article header h3 {
+  margin-right: auto;
+}
+article img {
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 2 / 1;
 }
 footer {
   --fontColor: white;
