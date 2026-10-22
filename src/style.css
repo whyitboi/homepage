@@ -22,12 +22,14 @@
   margin: 0;
   border: none;
   box-sizing: border-box;
+  text-decoration: none;
   --_fontFamily: var(--fontFamily, inherit);
   --_fontSize: var(--fontSize, inherit);
   --_fontColor: var(--fontColor, inherit);
   --_backgroundColor: var(--backgroundColor, inherit);
   --_padding: var(--padding, inherit);
-  --_iconSize: var(--iconSize, inherit)
+  --_iconSize: var(--iconSize, inherit);
+  --_gap: var(--gap, inherit)
     /*
  
   --_border: var(--border, inherit);
@@ -41,6 +43,7 @@
   --_fontColor: var(--fontColor, black);
   --_backgroundColor: var(--backgroundColor, white);
   --_padding: var(--padding, 1em);
+  --_gap: var(--gap, 1rem);
   --_iconSize: var(--iconSize, clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem))
     /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
   --_border: var(--border, 1px solid #d6d9d9);
@@ -107,14 +110,17 @@ header {
   font-size: var(--_fontSize);
   padding: var(--_padding);
 }
+nav {
+  display: flex;
+  justify-content: center;
+  gap: var(--_gap);
+  margin-top: 1em;
+}
 .icon {
-  width: var(--_fontSize);
+  width: var(--_iconSize);
   height: var(--_iconSize);
 }
-.header.about-me a {
-  /* justify-self: center; */
-  text-decoration: none;
-}
+
 footer {
   --fontColor: white;
   background: #239edb 0% 100%;
