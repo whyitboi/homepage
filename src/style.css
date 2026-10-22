@@ -71,11 +71,21 @@ h2 {
   padding: 10px;
 }
 h1 {
+  --fontSize: 40px;
+  font-size: var(--_fontSize);
   position: absolute;
   color: white;
   bottom: 0;
   text-align: left;
   max-width: min-content;
+}
+h2 {
+  --fontSize: 35px;
+  font-size: var(--_fontSize);
+}
+h3 {
+  --fontSize: 25px;
+  font-size: var(--_fontSize);
 }
 header {
   display: grid;
