@@ -21,33 +21,64 @@
   margin: 0;
   border: none;
   box-sizing: border-box;
-  /* --_fontFamily: var(--fontFamily, inherit);
+  --_fontFamily: var(--fontFamily, inherit);
   --_fontColor: var(--fontColor, inherit);
-  --_padding: var(--padding, inherit);
-  --_fontSize: var(--fontSize, inherit);
   --_backgroundColor: var(--backgroundColor, inherit);
   --_padding: var(--padding, inherit);
+  /*
+  --_fontSize: var(--fontSize, inherit);
   --_border: var(--border, inherit);
   --_borderRadius: var(--borderRadius, inherit); */
 }
 
 /*variables*/
-/* :root {
-  --_fontFamily: var(--fontFamily, "gondolaSDRegular");
-  --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
-  --_fontColor: var(--fontColor, black);
-  --_padding: var(--padding, 1em);
+:root {
+  --_fontFamily: var(--fontFamily, "robotoregular");
   --_backgroundColor: var(--backgroundColor, white);
+  --_padding: var(--padding, 1em);
+  --_fontColor: var(--fontColor, black);
+  /*--_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
+  
   --_border: var(--border, 1px solid #d6d9d9);
-  --_borderRadius: var(--borderRadius, 3px);
-} */
+  --_borderRadius: var(--borderRadius, 3px);*/
+}
 
 body {
   font-family: var(--_fontFamily);
+  background-color: var(--_backgroundColor);
+  display: grid;
+  grid-template-columns: 1fr;
   min-height: 100vh;
   justify-self: center;
-  background:
-    linear-gradient(165deg, #239edb 0% 20%, transparent 20%),
-    linear-gradient(to bottom, #eeeeed 20% 80% #239edb 80%);
-  /* transition: background 0.6s ease; */
+}
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h1,
+h2 {
+  --fontFamily: "playfair_displayregular";
+  font-family: var(--_fontFamily);
+  text-align: center;
+}
+h1 {
+  position: absolute;
+  color: white;
+  bottom: 30%;
+}
+header {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  justify-items: center;
+  background: linear-gradient(167deg, #239edb 60%, transparent 60%);
+  padding: var(--_padding);
+}
+
+.about-me {
+  /* text-align: center; */
+}
+footer {
+  background: #239edb 0% 100%;
 }
