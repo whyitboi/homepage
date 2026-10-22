@@ -41,7 +41,7 @@
   --_fontColor: var(--fontColor, black);
   --_backgroundColor: var(--backgroundColor, white);
   --_padding: var(--padding, 1em);
-  --_iconSize: var(--iconSize, 2em)
+  --_iconSize: var(--iconSize, clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem))
     /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
   --_border: var(--border, 1px solid #d6d9d9);
   --_borderRadius: var(--borderRadius, 3px);*/;
@@ -110,6 +110,10 @@ header {
 .icon {
   width: var(--_fontSize);
   height: var(--_iconSize);
+}
+.header.about-me a {
+  /* justify-self: center; */
+  text-decoration: none;
 }
 footer {
   --fontColor: white;
