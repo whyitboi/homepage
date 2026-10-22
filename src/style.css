@@ -85,6 +85,7 @@ header {
   box-shadow:
     4px 4px 8px rgba(0, 0, 0, 0.2),
     4px 4px 8px rgba(0, 0, 0, 0.1);
+  justify-self: stretch;
 }
 
 .header.about-me > p {
@@ -98,5 +99,8 @@ footer {
   color: var(--_fontColor);
 }
 img {
-  object-fit: fill;
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
