@@ -22,11 +22,12 @@
   border: none;
   box-sizing: border-box;
   --_fontFamily: var(--fontFamily, inherit);
+  --_fontSize: var(--fontSize, inherit);
   --_fontColor: var(--fontColor, inherit);
   --_backgroundColor: var(--backgroundColor, inherit);
   --_padding: var(--padding, inherit);
   /*
-  --_fontSize: var(--fontSize, inherit);
+ 
   --_border: var(--border, inherit);
   --_borderRadius: var(--borderRadius, inherit); */
 }
@@ -34,11 +35,12 @@
 /*variables*/
 :root {
   --_fontFamily: var(--fontFamily, "robotoregular");
+  --_fontSize: var(--fontSize, 24px);
+  --_fontColor: var(--fontColor, black);
   --_backgroundColor: var(--backgroundColor, white);
   --_padding: var(--padding, 1em);
-  --_fontColor: var(--fontColor, black);
-  /*--_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
-  
+
+  /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
   --_border: var(--border, 1px solid #d6d9d9);
   --_borderRadius: var(--borderRadius, 3px);*/
 }
@@ -61,24 +63,40 @@ h2 {
   --fontFamily: "playfair_displayregular";
   font-family: var(--_fontFamily);
   text-align: center;
+  padding: 10px;
 }
 h1 {
   position: absolute;
   color: white;
-  bottom: 30%;
+  bottom: 0;
+  text-align: left;
+  max-width: min-content;
 }
 header {
-  position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  gap: 1em;
   justify-items: center;
   background: linear-gradient(167deg, #239edb 60%, transparent 60%);
   padding: var(--_padding);
 }
+.header.picture {
+  position: relative;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    4px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-.about-me {
-  /* text-align: center; */
+.header.about-me > p {
+  --fontColor: rgb(87, 87, 87);
+  color: var(--_fontColor);
+  font-size: var(--_fontSize);
 }
 footer {
+  --fontColor: white;
   background: #239edb 0% 100%;
+  color: var(--_fontColor);
+}
+img {
+  object-fit: fill;
 }
