@@ -1,3 +1,4 @@
+/*Mobile First Development*/
 /*fonts*/
 @font-face {
   font-family: "playfair_displayregular";
@@ -26,10 +27,11 @@
   --_fontColor: var(--fontColor, inherit);
   --_backgroundColor: var(--backgroundColor, inherit);
   --_padding: var(--padding, inherit);
-  /*
+  --_iconSize: var(--iconSize, inherit)
+    /*
  
   --_border: var(--border, inherit);
-  --_borderRadius: var(--borderRadius, inherit); */
+  --_borderRadius: var(--borderRadius, inherit); */;
 }
 
 /*variables*/
@@ -39,10 +41,10 @@
   --_fontColor: var(--fontColor, black);
   --_backgroundColor: var(--backgroundColor, white);
   --_padding: var(--padding, 1em);
-
-  /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
+  --_iconSize: var(--iconSize, 2em)
+    /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
   --_border: var(--border, 1px solid #d6d9d9);
-  --_borderRadius: var(--borderRadius, 3px);*/
+  --_borderRadius: var(--borderRadius, 3px);*/;
 }
 
 body {
@@ -82,7 +84,7 @@ header {
       157deg,
       transparent 40%,
       rgba(0, 0, 0, 0.372) 40%,
-      transparent calc(40%+14px)
+      transparent calc(40% + 14px)
     ),
     linear-gradient(157deg, #239edb 40%, transparent 40%);
   padding: var(--_padding);
@@ -93,18 +95,24 @@ header {
     4px 4px 8px rgba(0, 0, 0, 0.372),
     4px 4px 8px rgba(0, 0, 0, 0.363);
 }
+.header.picture img {
+  object-fit: cover;
+  display: block;
+}
 
-.header.about-me > p {
+.header.about-me p {
+  --padding: 0.2em;
   --fontColor: rgb(87, 87, 87);
   color: var(--_fontColor);
   font-size: var(--_fontSize);
+  padding: var(--_padding);
+}
+.icon {
+  width: var(--_fontSize);
+  height: var(--_iconSize);
 }
 footer {
   --fontColor: white;
   background: #239edb 0% 100%;
   color: var(--_fontColor);
-}
-img {
-  object-fit: cover;
-  display: block;
 }
