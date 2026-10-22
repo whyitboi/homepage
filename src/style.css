@@ -130,7 +130,9 @@ nav {
   width: var(--_iconSize);
   height: var(--_iconSize);
 }
-
+article header {
+  background: none;
+}
 footer {
   --fontColor: white;
   background: #239edb 0% 100%;
