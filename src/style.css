@@ -77,15 +77,21 @@ header {
   grid-template-rows: auto 1fr auto;
   gap: 1em;
   justify-items: center;
-  background: linear-gradient(167deg, #239edb 60%, transparent 60%);
+  background:
+    linear-gradient(
+      157deg,
+      transparent 40%,
+      rgba(0, 0, 0, 0.372) 40%,
+      transparent calc(40%+14px)
+    ),
+    linear-gradient(157deg, #239edb 40%, transparent 40%);
   padding: var(--_padding);
 }
 .header.picture {
   position: relative;
   box-shadow:
-    4px 4px 8px rgba(0, 0, 0, 0.2),
-    4px 4px 8px rgba(0, 0, 0, 0.1);
-  justify-self: stretch;
+    4px 4px 8px rgba(0, 0, 0, 0.372),
+    4px 4px 8px rgba(0, 0, 0, 0.363);
 }
 
 .header.about-me > p {
@@ -101,6 +107,4 @@ footer {
 img {
   object-fit: cover;
   display: block;
-  height: 100%;
-  width: 100%;
 }
