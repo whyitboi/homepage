@@ -475,39 +475,39 @@ footer picture img {
   footer {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
     column-gap: 2rem;
     padding-inline: var(--page-margin);
   }
-  /* 
+
   footer div {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: end;
-    padding: 0;
+    align-self: start;
   }
+
   footer div h2 {
-    text-align: left;
-    padding-left: 0;
+    padding-top: 0;
+    font-size: 3rem;
   }
+
+  footer .intro,
+  footer .address,
   footer div a {
-    display: flex;
-    align-items: center;
-    gap: var(--_gap);
+    font-size: 1.4rem;
+    overflow-wrap: anywhere;
   }
+  /* 
   footer nav {
     grid-column: 1;
     grid-row: 2;
     justify-content: flex-start;
     align-self: start;
     padding: 0;
-  }
+  }*/
   .contact-icon {
-    display: block;
-    width: 1.5rem;
-    height: 1.5rem;
-    filter: invert(1);
+    width: 2rem;
+    height: 2rem;
   }
+  /*
   footer picture {
     grid-column: 2;
     grid-row: 1 / span 2;
