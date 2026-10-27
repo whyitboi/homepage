@@ -203,6 +203,9 @@ footer div a {
   color: inherit;
   padding-bottom: 0.5rem;
 }
+.contact-icon {
+  display: none;
+}
 footer div h2 {
   font-weight: 500;
 }
@@ -225,7 +228,7 @@ footer .icon {
 footer picture {
   grid-row: 3;
 }
-footer img {
+footer picture img {
   display: block;
   object-fit: cover;
   width: 100%;
@@ -332,22 +335,46 @@ footer img {
   footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 2rem;
+    padding: 3rem 2.5rem 4rem 3.5rem;
   }
   footer div {
     grid-column: 1;
-    grid-row: 1 / span 2;
+    grid-row: 1;
+    align-self: end;
+    padding: 0;
+  }
+  footer div h2 {
+    text-align: left;
+    padding-left: 0;
+  }
+  footer div a {
+    display: flex;
+    align-items: center;
+    gap: var(--_gap);
   }
   footer nav {
     grid-column: 1;
-    grid-row: 3/-1;
+    grid-row: 2;
+    justify-content: flex-start;
+    align-self: start;
+    padding: 0;
+  }
+  .contact-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(1);
   }
   footer picture {
     grid-column: 2;
-    grid-row: 1/-1;
+    grid-row: 1 / span 2;
+    align-self: start;
   }
-  footer img {
+  footer picture img {
     object-fit: cover;
     display: block;
+    aspect-ratio: 5/7;
   }
 }
