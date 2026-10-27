@@ -180,8 +180,9 @@ footer {
 /*Tablet*/
 @media (min-width: 700px) {
   .page-header {
+    position: relative;
     --photo-w: clamp(220px, 40vw, 360px);
-    --card-inset: 2.5rem;
+    --card-inset: 3rem;
     --card-top: 5rem;
     --card-pad: 1.5rem;
     grid-template-columns: 1fr;
@@ -197,15 +198,9 @@ footer {
       linear-gradient(160deg, #239edb 50%, transparent 50%);
     padding: 1.5rem 2rem 3rem;
   }
-  h1 {
-    --fontSize: 60px;
-    font-size: var(--_fontSize);
-    color: white;
-    top: 0;
-    right: 160px;
-    min-width: max-content;
-  }
+
   .header.picture {
+    position: static;
     grid-area: 1/1;
     align-self: start;
     justify-self: start;
@@ -215,13 +210,22 @@ footer {
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
   }
+  h1 {
+    --fontSize: 60px;
+    font-size: var(--_fontSize);
+    top: 0.5rem;
+    right: 2.5rem;
+    bottom: auto;
+    /* z-index: 3; */
+    min-width: max-content;
+  }
 
   .header.about-me {
     position: static;
     z-index: 1;
     grid-area: 1/1;
     background-color: white;
-    margin-top: var(--card-top) 0 0 var(--card-inset);
+    margin: var(--card-top) 0 0 var(--card-inset);
     padding: var(--card-pad);
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
@@ -229,11 +233,12 @@ footer {
   }
   /*new element before about-me to handle floating text*/
   .header.about-me::before {
+    padding: 0 0 0 0.75em;
     content: "";
     float: left;
     width: calc(var(--photo-w) - var(--card-inset) - var(--card-pad) + 1rem);
     height: calc(
-      var(--photo-w) * (339 / 302) - var(--card-inset) - var(--card-pad) + 1rem
+      var(--photo-w) * (339 / 302) - var(--card-top) - var(--card-pad) + 1rem
     );
   }
 
