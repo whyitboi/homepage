@@ -124,7 +124,10 @@ h3 {
   width: 100%;
   height: auto;
 }
-
+.about-me {
+  line-height: 1.5;
+  background-color: white;
+}
 .header.about-me p,
 article p {
   --padding: 0.2em;
@@ -275,12 +278,14 @@ footer picture img {
     bottom: auto;
     min-width: max-content;
   }
-
+  .header.about-me h2 {
+    text-align: left;
+    padding-left: 0;
+  }
   .header.about-me {
     position: static;
     z-index: 1;
     grid-area: 1/1;
-    background-color: white;
     margin: var(--card-top) 0 0 var(--card-inset);
     padding: var(--card-pad);
     box-shadow:
@@ -386,8 +391,6 @@ footer picture img {
   }
   .page-header {
     position: relative;
-    /*  --card-inset: 3rem;
-    --card-pad: 1.5rem; */
     --photo-w: clamp(360px, 38vw, 560px);
     --card-top: 4rem;
     column-gap: 0;
@@ -400,7 +403,7 @@ footer picture img {
         rgba(0, 0, 0, 0.372) 68%,
         transparent calc(68% + 14px)
       ),
-      linear-gradient(167deg, var(--backgroundBlue) 68%, transparent 50%);
+      linear-gradient(167deg, var(--backgroundBlue) 68%, transparent 68%);
     padding: 3rem var(--page-margin) 8rem;
   }
 
@@ -412,10 +415,6 @@ footer picture img {
     min-height: calc(var(--photo-w) * 595 / 547);
     width: auto;
   }
-  /* .header.picture picture {
-    display: block;
-    height: 100%;
-  } */
   .header.picture img {
     position: absolute;
     aspect-ratio: auto;
@@ -426,11 +425,21 @@ footer picture img {
   }
   h1 {
     top: auto;
-    right: auto;
+    right: 0;
     bottom: 0;
     left: 0;
+    max-width: none;
+    min-width: 0;
+    text-align: center;
+    white-space: nowrap;
+    font-size: clamp(2.5rem, 4.4vw, 4rem);
   }
-
+  .header.about-me h2 {
+    padding: var(--_padding) 0;
+  }
+  .header.about-me p {
+    padding: 0;
+  }
   .header.about-me {
     align-self: start;
     grid-row: 1;
@@ -441,10 +450,7 @@ footer picture img {
   .header.about-me::before {
     display: none;
   }
-  .header.about-me h2 {
-    text-align: left;
-    padding-left: 0;
-  }
+
   .header.about-me nav {
     justify-content: flex-end;
   }
@@ -453,33 +459,17 @@ footer picture img {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
-  /* 
-  main section > h2 {
-    --padding: 2.5rem;
-    text-align: left;
-    padding-left: var(--_padding);
+  article p {
+    padding-bottom: 4rem;
   }
-  article img {
-    aspect-ratio: 4/3;
-  }
-
+  /*
   article header,
   article p {
     padding: 0;
     padding-inline: 1.5rem;
-  }
-  article h3 {
-    --fontFamily: "playfair_displayregular";
-    --fontSize: 1.25rem;
-    font-family: var(--_fontFamily);
-    font-size: var(--_fontSize);
-    font-weight: normal;
-  }
-  article p {
-    --fontSize: 1rem;
-    font-size: var(--_fontSize);
-    padding-bottom: 2rem;
-  }
+  }*/
+
+  /* 
   footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
