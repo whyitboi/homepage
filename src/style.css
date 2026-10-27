@@ -70,6 +70,7 @@ h2,
 h3 {
   --fontFamily: "playfair_displayregular";
   font-family: var(--_fontFamily);
+  font-weight: normal;
 }
 h1,
 h2 {
@@ -147,7 +148,8 @@ main section > div {
   --gap: 2rem;
   gap: var(--_gap);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  grid-template-columns: minmax(0, 1fr);
+  /* repeat(auto-fit, minmax(min(280px, 100%), 1fr)); */
 
   padding: 1rem;
   max-width: 1100px;
@@ -303,6 +305,7 @@ footer picture img {
     justify-content: flex-end;
   }
   main section > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
@@ -377,4 +380,149 @@ footer picture img {
     display: block;
     aspect-ratio: 5/7;
   }
+}
+
+/*Desktop*/
+@media (min-width: 1000px) {
+  :root {
+    --page-margin: max(6.3vw, calc((100vw-1260px) / 2));
+  }
+  .page-header {
+    position: relative;
+    /*  --card-inset: 3rem;
+    --card-pad: 1.5rem; */
+    --photo-w: clamp(360px, 38vw, 560px);
+    --card-top: 4rem;
+    column-gap: 0;
+    grid-template-columns: var(--photo-w) 1fr;
+    padding: 3rem var(--page-margin) 8rem;
+    background:
+      linear-gradient(
+        167deg,
+        transparent 68%,
+        rgba(0, 0, 0, 0.372) 68%,
+        transparent calc(68% + 14px)
+      ),
+      linear-gradient(167deg, var(--backgroundBlue) 68%, transparent 50%);
+    padding: 1.5rem 2rem 3rem;
+  }
+
+  .header.picture {
+    position: relative;
+    grid-area: 1/1;
+    justify-self: stretch;
+    z-index: 2;
+    width: auto;
+    box-shadow:
+      4px 4px 8px rgba(0, 0, 0, 0.372),
+      4px 4px 8px rgba(0, 0, 0, 0.363);
+  }
+  header picture img {
+    aspect-ratio: 547/595;
+    object-fit: cover;
+  }
+  h1 {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 0;
+  }
+
+  .header.about-me {
+    align-self: start;
+    grid-area: 1/2;
+    background-color: white;
+    margin: var(--card-top) 0 0 0;
+    padding: 1.5rem 2rem;
+    box-shadow:
+      4px 4px 8px rgba(0, 0, 0, 0.372),
+      4px 4px 8px rgba(0, 0, 0, 0.363);
+  }
+  .header.about-me::before {
+    display: none;
+  }
+  .header.about-me h2 {
+    text-align: left;
+    padding-left: 0;
+  }
+  .header.about-me nav {
+    justify-content: flex-end;
+  }
+  main section > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  /* 
+  main section > h2 {
+    --padding: 2.5rem;
+    text-align: left;
+    padding-left: var(--_padding);
+  }
+  article img {
+    aspect-ratio: 4/3;
+  }
+
+  article header,
+  article p {
+    padding: 0;
+    padding-inline: 1.5rem;
+  }
+  article h3 {
+    --fontFamily: "playfair_displayregular";
+    --fontSize: 1.25rem;
+    font-family: var(--_fontFamily);
+    font-size: var(--_fontSize);
+    font-weight: normal;
+  }
+  article p {
+    --fontSize: 1rem;
+    font-size: var(--_fontSize);
+    padding-bottom: 2rem;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 2rem;
+    padding: 3rem 2.5rem 4rem 3.5rem;
+  }
+  footer div {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    padding: 0;
+  }
+  footer div h2 {
+    text-align: left;
+    padding-left: 0;
+  }
+  footer div a {
+    display: flex;
+    align-items: center;
+    gap: var(--_gap);
+  }
+  footer nav {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+    align-self: start;
+    padding: 0;
+  }
+  .contact-icon {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: invert(1);
+  }
+  footer picture {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+  footer picture img {
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 5/7;
+  } */
 }
