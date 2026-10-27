@@ -385,7 +385,7 @@ footer picture img {
 /*Desktop*/
 @media (min-width: 1000px) {
   :root {
-    --page-margin: max(6.3vw, calc((100vw-1260px) / 2));
+    --page-margin: max(6.3vw, calc((100vw - 1260px) / 2));
   }
   .page-header {
     position: relative;
@@ -395,7 +395,6 @@ footer picture img {
     --card-top: 4rem;
     column-gap: 0;
     grid-template-columns: var(--photo-w) 1fr;
-    padding: 3rem var(--page-margin) 8rem;
     background:
       linear-gradient(
         167deg,
@@ -404,7 +403,7 @@ footer picture img {
         transparent calc(68% + 14px)
       ),
       linear-gradient(167deg, var(--backgroundBlue) 68%, transparent 50%);
-    padding: 1.5rem 2rem 3rem;
+    padding: 3rem var(--page-margin) 8rem;
   }
 
   .header.picture {
