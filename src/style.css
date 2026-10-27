@@ -216,7 +216,6 @@ footer {
     top: 0.5rem;
     right: 2.5rem;
     bottom: auto;
-    /* z-index: 3; */
     min-width: max-content;
   }
 
@@ -244,5 +243,13 @@ footer {
 
   nav {
     justify-content: flex-end;
+  }
+  main section > div {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  main section > h2 {
+    text-align: left;
+    padding-left: var(--_padding);
   }
 }
