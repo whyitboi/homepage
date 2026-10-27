@@ -178,6 +178,9 @@ footer {
   background: #239edb 0% 100%;
   color: var(--_fontColor);
 }
+footer img {
+  display: none;
+}
 
 /*Tablet*/
 @media (min-width: 700px) {
@@ -258,16 +261,14 @@ footer {
   article img {
     aspect-ratio: 4/3;
   }
-  /* article header,
+
+  article header,
   article p {
     padding-inline: 1.5rem;
-  } */
-  article header {
-    padding-left: 0;
   }
   article h3 {
     --fontFamily: "playfair_displayregular";
-    --fontSize: 1.5rem;
+    --fontSize: 1.25rem;
     font-family: var(--_fontFamily);
     font-size: var(--_fontSize);
     font-weight: normal;
@@ -275,5 +276,13 @@ footer {
   article p {
     --fontSize: 1rem;
     font-size: var(--_fontSize);
+    padding-bottom: 2rem;
+  }
+  footer {
+    position: relative;
+  }
+  footer img {
+    position: absolute;
+    display: block;
   }
 }
