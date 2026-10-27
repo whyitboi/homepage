@@ -179,6 +179,12 @@ footer {
 
 /*Tablet*/
 @media (min-width: 700px) {
+  .page-header {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    justify-items: stretch;
+    padding: 1.5rem 2rem 3rem;
+  }
   h1 {
     --fontSize: 60px;
     font-size: var(--_fontSize);
@@ -191,8 +197,8 @@ footer {
   }
   .header.picture {
     position: relative;
-    width: 70%;
     top: -20px;
+    left: 0;
     z-index: 2;
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
@@ -207,19 +213,4 @@ footer {
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
   }
-
-  /* .header.about-me p,
-  article p {
-    --padding: 0.2em;
-    --fontColor: rgb(87, 87, 87);
-    color: var(--_fontColor);
-    font-size: var(--_fontSize);
-    padding: var(--_padding);
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: var(--_gap);
-    margin-top: 1em;
-  } */
 }
