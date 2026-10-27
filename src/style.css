@@ -395,6 +395,7 @@ footer picture img {
     --card-top: 4rem;
     column-gap: 0;
     grid-template-columns: var(--photo-w) 1fr;
+    grid-template-rows: auto 3rem;
     background:
       linear-gradient(
         167deg,
@@ -408,17 +409,26 @@ footer picture img {
 
   .header.picture {
     position: relative;
-    grid-area: 1/1;
+    grid-row: 1 / span 2;
     justify-self: stretch;
-    z-index: 2;
+    min-height: calc(var(--photo-w) * 595 / 547);
+
     width: auto;
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
   }
-  header picture img {
-    aspect-ratio: 547/595;
+  /* .header.picture picture {
+    display: block;
+    height: 100%;
+  } */
+  .header.picture img {
+    position: absolute;
+    aspect-ratio: auto;
     object-fit: cover;
+    inset: 0;
+    height: 100%;
+    width: 100%;
   }
   h1 {
     top: auto;
@@ -429,7 +439,7 @@ footer picture img {
 
   .header.about-me {
     align-self: start;
-    grid-area: 1/2;
+    grid-row: 1;
     background-color: white;
     margin: var(--card-top) 0 0 0;
     padding: 1.5rem 2rem;
