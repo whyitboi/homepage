@@ -183,34 +183,48 @@ footer {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
     justify-items: stretch;
+    background:
+      linear-gradient(
+        160deg,
+        transparent 50%,
+        rgba(0, 0, 0, 0.372) 50%,
+        transparent calc(40% + 14px)
+      ),
+      linear-gradient(160deg, #239edb 50%, transparent 50%);
     padding: 1.5rem 2rem 3rem;
   }
   h1 {
     --fontSize: 60px;
     font-size: var(--_fontSize);
-    position: absolute;
-    z-index: 1;
+    /* z-index: 1; */
     color: white;
     top: 0;
-    right: -45px;
-    max-width: fit-content;
+    left: 160px;
+    min-width: max-content;
   }
   .header.picture {
-    position: relative;
-    top: -20px;
-    left: 0;
+    grid-area: 1/1/2/6;
+    align-self: start;
     z-index: 2;
+    width: auto;
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
   }
 
   .header.about-me {
-    position: absolute; /*when I set this to relative it goes back under the picture*/
-    top: 100px;
+    position: static;
+    z-index: 1;
+    grid-area: 1/2/2/12;
     background-color: white;
+    margin-top: 5rem;
+    padding: 1.5rem 1.5rem 1.5rem 42%;
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
+  }
+  nav {
+    display: flex;
+    justify-content: flex-end;
   }
 }
