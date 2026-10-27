@@ -44,10 +44,12 @@
   --_backgroundColor: var(--backgroundColor, white);
   --_padding: var(--padding, 1em);
   --_gap: var(--gap, 1rem);
-  --_iconSize: var(--iconSize, clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem))
-    /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
+  --_iconSize: var(--iconSize, clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem));
+  --backgroundBlue: #0891b3;
+
+  /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
   --_border: var(--border, 1px solid #d6d9d9);
-  --_borderRadius: var(--borderRadius, 3px);*/;
+  --_borderRadius: var(--borderRadius, 3px);*/
 }
 
 body {
@@ -86,7 +88,7 @@ h1 {
 h2 {
   --fontSize: 35px;
   font-size: var(--_fontSize);
-  font-weight: 500;
+  font-weight: normal;
 }
 h3 {
   --fontSize: 25px;
@@ -104,7 +106,7 @@ h3 {
       rgba(0, 0, 0, 0.372) 40%,
       transparent calc(40% + 14px)
     ),
-    linear-gradient(157deg, #239edb 40%, transparent 40%);
+    linear-gradient(157deg, var(--backgroundBlue) 40%, transparent 40%);
   padding: var(--_padding);
 }
 .header.picture {
@@ -174,7 +176,7 @@ article header {
 }
 article header h3 {
   margin-right: auto;
-  font-weight: 500;
+  font-weight: normal;
 }
 article img {
   display: block;
@@ -187,7 +189,7 @@ footer {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   --fontColor: white;
-  background: #239edb 0% 100%;
+  background: var(--backgroundBlue) 0% 100%;
   color: var(--_fontColor);
 }
 
@@ -199,6 +201,7 @@ footer div a {
   text-decoration: none;
   display: block;
   color: inherit;
+  padding-bottom: 0.5rem;
 }
 footer div h2 {
   font-weight: 500;
@@ -207,14 +210,17 @@ footer div h2 {
   font-size: 1.25rem;
 }
 .intro,
-.address,
-footer div a {
+.address {
   padding-bottom: var(--_padding);
 }
 footer nav {
   padding-bottom: 2rem;
-  gap: 2.5rem;
+  gap: 3rem;
   grid-row: 2;
+}
+footer .icon {
+  width: 2.75rem;
+  height: 2.75rem;
 }
 footer picture {
   grid-row: 3;
@@ -223,6 +229,7 @@ footer img {
   display: block;
   object-fit: cover;
   width: 100%;
+  aspect-ratio: 2/3;
 }
 
 /*Tablet*/
@@ -243,7 +250,7 @@ footer img {
         rgba(0, 0, 0, 0.372) 50%,
         transparent calc(50% + 14px)
       ),
-      linear-gradient(160deg, #239edb 50%, transparent 50%);
+      linear-gradient(160deg, var(--backgroundBlue) 50%, transparent 50%);
     padding: 1.5rem 2rem 3rem;
   }
 
