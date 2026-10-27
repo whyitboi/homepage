@@ -186,11 +186,12 @@ footer {
     z-index: 1;
     color: white;
     top: 0;
-    right: 0;
+    right: -45px;
     max-width: fit-content;
   }
   .header.picture {
     position: relative;
+    width: 70%;
     top: -20px;
     z-index: 2;
     box-shadow:
@@ -200,6 +201,7 @@ footer {
 
   .header.about-me {
     position: absolute; /*when I set this to relative it goes back under the picture*/
+    top: 100px;
     background-color: white;
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
