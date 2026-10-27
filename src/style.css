@@ -435,7 +435,7 @@ footer picture img {
     font-size: clamp(2.5rem, 4.4vw, 4rem);
   }
   .header.about-me h2 {
-    padding: var(--_padding) 0;
+    font-size: 3rem;
   }
   .header.about-me p {
     padding: 0;
@@ -454,20 +454,25 @@ footer picture img {
   .header.about-me nav {
     justify-content: flex-end;
   }
+  main section {
+    padding-inline: var(--page-margin);
+  }
+  main section > h2 {
+    padding-left: 0;
+    font-size: 3rem;
+  }
   main section > div {
+    --gap: 3.75rem 3rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    padding-inline: 0;
+    margin-inline: 0;
+    max-width: none;
   }
   article p {
     padding-bottom: 4rem;
   }
-  /*
-  article header,
-  article p {
-    padding: 0;
-    padding-inline: 1.5rem;
-  }*/
 
   /* 
   footer {
