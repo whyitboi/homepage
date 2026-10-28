@@ -281,7 +281,7 @@ footer picture img {
     z-index: 1;
     grid-area: 1/1;
     margin: var(--card-top) var(--card-right) 0 var(--card-inset);
-    padding: var(--card-pad-top-pad) var(--card-pad) var(--card-pad);
+    padding: var(--card-pad-top) var(--card-pad) var(--card-pad);
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
       4px 4px 8px rgba(0, 0, 0, 0.363);
