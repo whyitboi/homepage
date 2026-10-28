@@ -29,11 +29,7 @@
   --_backgroundColor: var(--backgroundColor, inherit);
   --_padding: var(--padding, inherit);
   --_iconSize: var(--iconSize, inherit);
-  --_gap: var(--gap, inherit)
-    /*
- 
-  --_border: var(--border, inherit);
-  --_borderRadius: var(--borderRadius, inherit); */;
+  --_gap: var(--gap, inherit);
 }
 
 /*variables*/
@@ -46,12 +42,9 @@
   --_gap: var(--gap, 1rem);
   --_iconSize: var(--iconSize, clamp(1.75rem, 1.2rem + 1.5vw, 2.5rem));
   --backgroundBlue: #0891b3;
-
-  /*    --_fontSize: var(--fontSize, clamp(1em, 0.5em, +1.5vw, 2rem), 24px);
-  --_border: var(--border, 1px solid #d6d9d9);
-  --_borderRadius: var(--borderRadius, 3px);*/
 }
 
+/*Mobile*/
 body {
   font-family: var(--_fontFamily);
   background-color: var(--_backgroundColor);
@@ -126,7 +119,7 @@ h3 {
 }
 .about-me {
   line-height: 1.5;
-  background-color: white;
+  background-color: var(--_backgroundColor);
 }
 .header.about-me p,
 article p {
@@ -243,11 +236,12 @@ footer picture img {
 /*Tablet*/
 @media (min-width: 700px) {
   .page-header {
-    position: relative;
-    --photo-w: clamp(220px, 40vw, 360px);
+    --photo-w: clamp(220px, 46vw, 400px);
     --card-inset: 3rem;
-    --card-top: 5rem;
-    --card-pad: 1.5rem;
+    --card-top: 6.25rem;
+    --card-pad: 2rem;
+    --card-right: 5.5rem;
+    position: relative;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-items: stretch;
@@ -259,7 +253,7 @@ footer picture img {
         transparent calc(50% + 14px)
       ),
       linear-gradient(160deg, var(--backgroundBlue) 50%, transparent 50%);
-    padding: 1.5rem 2rem 3rem;
+    padding: 2.5rem 2rem 3rem;
   }
 
   .header.picture {
@@ -271,7 +265,7 @@ footer picture img {
     width: var(--photo-w);
   }
   h1 {
-    --fontSize: 60px;
+    --fontSize: 3.5rem;
     font-size: var(--_fontSize);
     top: 0.5rem;
     right: 2.5rem;
@@ -279,14 +273,13 @@ footer picture img {
     min-width: max-content;
   }
   .header.about-me h2 {
-    text-align: left;
     padding-left: 0;
   }
   .header.about-me {
     position: static;
     z-index: 1;
     grid-area: 1/1;
-    margin: var(--card-top) 0 0 var(--card-inset);
+    margin: var(--card-top) var(--card-right) 0 var(--card-inset);
     padding: var(--card-pad);
     box-shadow:
       4px 4px 8px rgba(0, 0, 0, 0.372),
@@ -301,6 +294,10 @@ footer picture img {
     height: calc(
       var(--photo-w) * (339 / 302) - var(--card-top) - var(--card-pad) + 1rem
     );
+  }
+  .header.about-me p {
+    --fontSize: 1rem;
+    font-size: var(--_fontSize);
   }
 
   nav {
@@ -319,6 +316,13 @@ footer picture img {
   article img {
     aspect-ratio: 4/3;
   }
+  article header {
+    gap: 0.9rem;
+  }
+  article header .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
 
   article header,
   article p {
@@ -327,13 +331,13 @@ footer picture img {
   }
   article h3 {
     --fontFamily: "playfair_displayregular";
-    --fontSize: 1.25rem;
+    --fontSize: 1.125rem;
     font-family: var(--_fontFamily);
     font-size: var(--_fontSize);
     font-weight: normal;
   }
   article p {
-    --fontSize: 1rem;
+    --fontSize: 0.85rem;
     font-size: var(--_fontSize);
     padding-bottom: 2rem;
   }
@@ -342,9 +346,12 @@ footer picture img {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
     column-gap: 2rem;
-    padding: 3rem 2.5rem 4rem 3.5rem;
+    padding: 2.6rem 2.3rem 3.9rem 3.25rem;
   }
   footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     grid-column: 1;
     grid-row: 1;
     align-self: end;
@@ -359,12 +366,24 @@ footer picture img {
     align-items: center;
     gap: var(--_gap);
   }
+  .intro {
+    font-size: 1rem;
+  }
+  .address,
+  footer div a {
+    font-size: 1.06rem;
+  }
   footer nav {
     grid-column: 1;
     grid-row: 2;
     justify-content: flex-start;
     align-self: start;
     padding: 0;
+    gap: 1.75rem;
+  }
+  footer .icon {
+    width: 2.25rem;
+    height: 2.25rem;
   }
   .contact-icon {
     display: block;
@@ -468,8 +487,21 @@ footer picture img {
     margin-inline: 0;
     max-width: none;
   }
+  article header {
+    gap: 1.25rem;
+  }
+  article h3 {
+    --fontSize: 1.5rem;
+    font-size: var(--_fontSize);
+  }
+  article header .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
   article p {
+    --fontSize: 1.1rem;
     padding-bottom: 3rem;
+    font-size: var(--_fontSize);
   }
 
   footer {
